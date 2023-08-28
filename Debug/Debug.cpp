@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -10,18 +11,19 @@ int main()
     {
         cin >> nums[i];
     }
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (nums[j] > nums[j + 1])
-            {
-                nums[j] = nums[j] ^ nums[j + 1];
-                nums[j + 1] = nums[j] ^ nums[j + 1];
-                nums[j] = nums[j] ^ nums[j + 1];
-            }
-        }
-    }
+    // for (int i = 0; i < n - 1; i++)
+    // {
+    //     for (int j = 0; j < n - i - 1; j++)
+    //     {
+    //         if (nums[j] > nums[j + 1])
+    //         {
+    //             nums[j] = nums[j] ^ nums[j + 1];
+    //             nums[j + 1] = nums[j] ^ nums[j + 1];
+    //             nums[j] = nums[j] ^ nums[j + 1];
+    //         }
+    //     }
+    // }
+    sort(nums, nums + n);
     for (int i = 0; i < n; i++)
     {
         cout << nums[i] << " ";
